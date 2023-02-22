@@ -1,0 +1,24 @@
+// CloudCannon editor styles
+
+// These define the styles for the text alignment toolbar options in rich content areas
+.align-to-left {
+	text-align: left;
+}
+
+.align-to-center {
+	text-align: center;
+}
+
+.align-to-right {
+	text-align: right;
+}
+
+.justify {
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+// Custom style sets selectable from the "Styles" menu in rich content areas
+span.red-text {
+	color: red;
+}

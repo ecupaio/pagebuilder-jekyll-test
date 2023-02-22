@@ -1,0 +1,18 @@
+{% if include.content_blocks.size > 0 %}
+    <div class="c-page theme-{{ include.page_theme | slugify | default: 'dark' }}">
+
+    {% for block in include.content_blocks %}
+        {% assign c = block._bookshop_name | prepend: 'c-' %}
+        <div class="{{c}}
+                    component-wrapper
+                    {% if block._alt %}
+                    component-wrapper--alt
+                    {% elsif block._branded %}
+                    component-wrapper--branded
+                    {% endif %}">
+            {% bookshop {{block._bookshop_name}} bind=block %}
+        </div>
+    {% endfor %}
+
+    </div>
+{% endif %}

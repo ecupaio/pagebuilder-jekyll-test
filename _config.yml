@@ -1,0 +1,104 @@
+# Jekyll Configuration
+collections_dir: 'collections'
+data_dir: _website_settings
+permalink: pretty
+
+source: site
+
+plugins:
+  - jekyll-bookshop
+  - cloudcannon-jekyll-bookshop
+
+include:
+  - _cloudcannon
+  
+exclude:
+  - node_modules
+
+collections:
+  pages:
+    name: 'Pages'
+    _icon: 'web'
+    _singular_name: 'Page'
+    _slug: 'pages'
+    output: true
+    permalink: /:title/
+
+# Bookshop Configuration
+bookshop_locations:
+  - ../component-library
+
+# CloudCannon Configuration
+####
+
+_array_structures:
+  content_blocks:
+    style: modal
+    # This is auto-populated by the bookshop-array-structures plugin.
+
+_select_data:
+  fonts:
+    - "Arial"
+    - "Verdana"
+    - "Helvetica"
+    - "Tahoma"
+    - "Trebuchet MS"
+    - "Times New Roman"
+    - "Georgia"
+    - "Garamond"
+    - "Courier New"
+    - "Brush Script MT"
+
+
+_comments:
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+      _options:
+        content: &content_defaults
+          uploads_dir: "/images/uploads/:title"
+          width: 1180
+          height: 900
+          format: p h1 h2 h3 h4 h5 h6 div
+          styles: /assets/cms-styles.css
+          undo: true
+          redo: true
+          left: align-to-left
+          center: align-to-center
+          right: align-to-right
+          justify: justify
+          bold: true
+          italic: true
+          underline: true
+          strike: true
+          subscript: false
+          superscript: false
+          blockquote: true
+          table: true
+          copyformatting: true
+          removeformat: true
+          numberedlist: true
+          bulletedlist: true
+          outdent: false
+          indent: false
+          image: true
+          link: true
+          embed: true
+        content_text:
+          *content_defaults
+        content_html:
+          *content_defaults
+        text:
+          *content_defaults
+        text_html:
+          *content_defaults
+  -
+    scope:
+      type: pages
+      path: _pages/index.html
+    values:
+      permalink: /
